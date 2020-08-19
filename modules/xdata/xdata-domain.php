@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * A class to handle cross domain data and single sign on for multiple domains

@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Handles the admin action of exporting strings translations.
  *
  * @since 2.7

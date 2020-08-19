@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * Advanced media functionalities
@@ -19,19 +22,20 @@ class PLL_Admin_Advanced_Media {
 		$this->model   = &$polylang->model;
 		$this->posts   = &$polylang->posts;
 
-
-		$polylang->bulk_translate->register_options(
-			array(
-				new PLL_Media_Bulk_Option(
-					array(
-						'name'        => 'pll_copy_media',
-						'description' => __( 'Copy original items to selected languages', 'polylang-pro' ),
+		if ( $polylang instanceof PLL_Admin ) {
+			$polylang->bulk_translate->register_options(
+				array(
+					new PLL_Media_Bulk_Option(
+						array(
+							'name'        => 'pll_copy_media',
+							'description' => __( 'Copy original items to selected languages', 'polylang-pro' ),
+						),
+						$polylang->model,
+						$this->posts
 					),
-					$polylang->model,
-					$this->posts
-				),
-			)
-		);
+				)
+			);
+		}
 
 		if ( ! empty( $this->options['media']['duplicate'] ) ) {
 			add_action( 'add_attachment', array( $this, 'duplicate_media' ), 20 ); // After Polylang.

@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * The export interface file which implement the interface.
  *
  * Each class implementing this interface shall be the representation of a single file to be exported

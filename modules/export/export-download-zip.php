@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Handles file download.
  *
  * @since 2.7

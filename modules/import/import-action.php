@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * A class that handle the import action.

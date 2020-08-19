@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * Smart copy of post content

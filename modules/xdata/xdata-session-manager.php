@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * A class to store cross domain data

@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Main class for Polylang Pro wizard.
  *
  * @since 2.7

@@ -109,6 +109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../settings */ "./modules/block-editor/js/sidebar/settings.js");
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -178,6 +180,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -221,6 +225,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_edit_post__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_edit_post__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * @package Polylang-Pro
+ */
+
 
 
 
@@ -280,6 +288,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -527,6 +537,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _metabox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../metabox */ "./modules/block-editor/js/sidebar/components/metabox/index.js");
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -578,6 +590,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -677,6 +691,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _synchronization_modal_content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./synchronization-modal-content */ "./modules/block-editor/js/sidebar/components/synchronization-button/synchronization-modal-content.js");
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -790,6 +806,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -918,6 +936,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * External dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -1312,6 +1332,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -1508,6 +1530,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Import styles
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -1737,6 +1761,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_STATE", function() { return DEFAULT_STATE; });
 /**
  * Module Constants
+ *
+ * @package Polylang-Pro
  */
 
 var MODULE_KEY = 'pll/metabox';
@@ -1779,6 +1805,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress Dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -1991,6 +2019,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * WordPress Dependencies
+ *
+ * @package Polylang-Pro
  */
 
 

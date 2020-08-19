@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Duplicates medias in Bulk Translate actions
  *
  * @since 2.7

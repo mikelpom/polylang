@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * PO file, generated from importing translations
  *
  * Handles the reading of a PO file.

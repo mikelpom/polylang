@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * Setup the REST API endpoints and filters
@@ -74,8 +77,9 @@ class PLL_REST_API {
 			'pll/v1',
 			'/languages',
 			array(
-				'methods'  => WP_REST_Server::READABLE,
-				'callback' => array( $this->model, 'get_languages_list' ),
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $this->model, 'get_languages_list' ),
+				'permission_callback' => '__return_true',
 			)
 		);
 
@@ -83,9 +87,10 @@ class PLL_REST_API {
 			'pll/v1',
 			'/untranslated-posts',
 			array(
-				'methods'  => WP_REST_Server::READABLE,
-				'callback' => array( $this, 'get_untranslated_posts' ),
-				'args' => $this->get_untranslated_posts_collection_params(),
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'get_untranslated_posts' ),
+				'permission_callback' => '__return_true',
+				'args'                => $this->get_untranslated_posts_collection_params(),
 			)
 		);
 	}

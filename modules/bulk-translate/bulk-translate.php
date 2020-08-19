@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * A class to bulk translate posts
@@ -43,10 +46,41 @@ class PLL_Bulk_Translate {
 	/**
 	 * PLL_Bulk_Translate constructor.
 	 *
+	 * @since 2.4
+	 *
 	 * @param PLL_Model $model Shared instance of the current PLL_Model.
 	 */
 	public function __construct( $model ) {
 		$this->model = $model;
+
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+	}
+
+	/**
+	 * Enqueues script and style.
+	 *
+	 * @since 2.8
+	 */
+	public function admin_enqueue_scripts() {
+		$screen = get_current_screen();
+
+		if ( in_array( $screen->base, array( 'edit', 'upload' ) ) ) {
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			wp_enqueue_script(
+				'pll_bulk_translate',
+				plugins_url( '/js/bulk-translate' . $suffix . '.js', __FILE__ ),
+				array( 'jquery', 'wp-ajax-response' ),
+				POLYLANG_VERSION,
+				1
+			);
+
+			wp_enqueue_style(
+				'pll_bulk_translate',
+				plugins_url( '/css/bulk-translate' . $suffix . '.css', __FILE__ ),
+				array(),
+				POLYLANG_VERSION
+			);
+		}
 	}
 
 	/**
@@ -267,7 +301,7 @@ class PLL_Bulk_Translate {
 				return $first_element->get_priority() - $second_element->get_priority();
 			}
 		);
-		include PLL_MODULES_INC . '/bulk-translate/view-bulk-translate.php';
+		include __DIR__ . '/view-bulk-translate.php';
 	}
 
 	/**
@@ -329,6 +363,4 @@ class PLL_Bulk_Translate {
 
 		return $sendback;
 	}
-
-
 }

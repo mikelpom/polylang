@@ -2,6 +2,7 @@
 /**
  * Displays the strings translations export form
  *
+ * @package Polylang-Pro
  * @since 2.7
  */
 

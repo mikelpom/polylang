@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Duplicate or Synchronize post in Bulk Translate action.
  *
  * @since 2.7

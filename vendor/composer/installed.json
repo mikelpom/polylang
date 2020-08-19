@@ -1,0 +1,51 @@
+[
+    {
+        "name": "wpsyntex/polylang",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/polylang/polylang.git",
+            "reference": "ebea831d8f4bad9de3bf63f65e1678c968331a48"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/polylang/polylang/zipball/ebea831d8f4bad9de3bf63f65e1678c968331a48",
+            "reference": "ebea831d8f4bad9de3bf63f65e1678c968331a48",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "automattic/vipwpcs": "*",
+            "dealerdirect/phpcodesniffer-composer-installer": "*",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpunit/phpunit": "^5",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-08-17T08:40:38+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "admin/",
+                "frontend/",
+                "include/",
+                "integrations/",
+                "install/",
+                "modules/",
+                "settings/"
+            ]
+        },
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "description": "Making WordPress multilingual.",
+        "homepage": "https://polylang.pro",
+        "support": {
+            "source": "https://github.com/polylang/polylang/tree/master",
+            "issues": "https://github.com/polylang/polylang/issues"
+        }
+    }
+]

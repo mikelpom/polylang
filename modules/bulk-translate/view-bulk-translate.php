@@ -1,7 +1,8 @@
 <?php
-
 /**
  * Outputs the bulk translate form
+ *
+ * @package Polylang-Pro
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

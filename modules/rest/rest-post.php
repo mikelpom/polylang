@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * Expose terms language and translations in the REST API
@@ -22,6 +25,7 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 		$this->id   = 'ID';
 
 		add_action( 'parse_query', array( $this, 'parse_query' ), 1 );
+		add_action( 'add_attachment', array( $this, 'set_media_language' ) );
 
 		foreach ( array_keys( $content_types ) as $post_type ) {
 			add_filter( "rest_prepare_{$post_type}", array( $this, 'prepare_response' ), 10, 3 );
@@ -195,5 +199,21 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 		}
 
 		return $return;
+	}
+
+	/**
+	 * Set the language to the edited media
+	 *
+	 * When a media is edited in the block image, a new media is created and we need to set the language from the original one.
+	 *
+	 * @see new WordPress 5.5 feature https://make.wordpress.org/core/2020/07/20/editing-images-in-the-block-editor/
+	 * @since 2.8
+	 *
+	 * @param int $post_id
+	 */
+	public function set_media_language( $post_id ) {
+		if ( ! empty( $this->params['id'] ) && $post_id !== $this->params['id'] ) {
+			$this->model->post->set_language( $post_id, $this->model->post->get_language( $this->params['id'] ) );
+		}
 	}
 }

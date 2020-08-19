@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * Abstract class to expose posts (or terms) language and translations in the REST API

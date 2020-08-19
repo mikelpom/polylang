@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Handles the logic for generating translations files and assigning values to those.
  *
  * @since 2.7

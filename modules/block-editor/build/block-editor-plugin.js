@@ -107,6 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidebar_settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sidebar/settings */ "./modules/block-editor/js/sidebar/settings.js");
 /**
  * WordPress dependencies
+ *
+ * @package Polylang-Pro
  */
 
 
@@ -132,14 +134,13 @@ function (options, next) {
 	// If options.url is defined, this is not a REST request but a direct call to post.php for legacy metaboxes.
 	if (Object(lodash__WEBPACK_IMPORTED_MODULE_3__["isUndefined"])(options.url)) {
 		if (isSaveRequest(options)) {
-			if (isRequestForCurrentPost) {
-				options.data.is_block_editor = true;
-			} else {
+			options.data.is_block_editor = true;
+			if (!isRequestForCurrentPost) {
 				options.data.lang = getCurrentLanguage();
 			}
 		} else {
 			addLanguageToRequest(options);
-			addIsBlockEditorToRequest(options, isRequestForCurrentPost);
+			addIsBlockEditorToRequest(options);
 		}
 	}
 	return next(options);
@@ -158,8 +159,12 @@ function isCurrentPostRequest(options) {
 	// it's done by verifying options.path matches with one of baseURL of all post types
 	// and compare current post id with this sent in the request
 	var postTypeURLs = Object(lodash__WEBPACK_IMPORTED_MODULE_3__["map"])(Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__["select"])('core').getEntitiesByKind('postType'), Object(lodash__WEBPACK_IMPORTED_MODULE_3__["property"])('baseURL'));
+	// add specific REST API URL for the language switcher block.
+	postTypeURLs.push('/wp/v2/block-renderer/polylang/language-switcher');
 	var postId = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__["select"])('core/editor').getCurrentPostId();
-	var id = !Object(lodash__WEBPACK_IMPORTED_MODULE_3__["isUndefined"])(options.data) ? options.data.id || null : null;
+	// for GET request post_id parameter exists only for other requests than post request itself.
+	// null for post request to avoid to fetch again the preloaded post request.
+	var id = !Object(lodash__WEBPACK_IMPORTED_MODULE_3__["isUndefined"])(options.data) ? options.data.id || null : !Object(lodash__WEBPACK_IMPORTED_MODULE_3__["isUndefined"])(options.path) ? parseInt(Object(_wordpress_url__WEBPACK_IMPORTED_MODULE_2__["getQueryArg"])(options.path, 'post_id'), 10) || null : null;
 	return -1 !== postTypeURLs.findIndex(function (element) {
 		return new RegExp('' + Object(lodash__WEBPACK_IMPORTED_MODULE_3__["escapeRegExp"])(element)).test(options.path); // phpcs:ignore WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore, WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter
 	}) && postId === id;
@@ -214,17 +219,12 @@ function getCurrentLanguage() {
  * Add is_block_editor parameter to the request in a block editor context
  *
  * @param {type} options the initial request
- * @param {type} options the initial request
  * @returns {undefined}
  */
 function addIsBlockEditorToRequest(options) {
-	var isCurrentPostRequest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-	if (isCurrentPostRequest) {
-		options.path = Object(_wordpress_url__WEBPACK_IMPORTED_MODULE_2__["addQueryArgs"])(options.path, {
-			is_block_editor: true
-		});
-	}
+	options.path = Object(_wordpress_url__WEBPACK_IMPORTED_MODULE_2__["addQueryArgs"])(options.path, {
+		is_block_editor: true
+	});
 }
 
 /***/ }),
@@ -244,6 +244,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_STATE", function() { return DEFAULT_STATE; });
 /**
  * Module Constants
+ *
+ * @package Polylang-Pro
  */
 
 var MODULE_KEY = 'pll/metabox';

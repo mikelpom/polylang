@@ -1,8 +1,14 @@
 <?php
 /**
+ * @package Polylang-Pro
+ */
+
+/**
  * Define a Bulk_Translate option
  *
- * Should be registered using the pll_bulk_action_options {@see PLL_Bulk_Translate}
+ * Should be registered using the pll_bulk_action_options
+ *
+ * @see PLL_Bulk_Translate
  *
  * @since 2.7
  */

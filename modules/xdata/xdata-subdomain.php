@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Polylang-Pro
+ */
 
 /**
  * A class to handle cross domain data and single sign on for subdomains
@@ -62,9 +65,7 @@ class PLL_Xdata_Subdomain extends PLL_Xdata_Base {
 	 * @since 2.0
 	 */
 	public function maybe_language_switched() {
-		$redirect = urlencode( pll_get_requested_url() );
-
-		if ( $js = $this->maybe_get_xdomain_js( $redirect, $this->curlang ) ) {
+		if ( $js = $this->maybe_get_xdomain_js( pll_get_requested_url(), $this->curlang ) ) {
 			echo '<script async type="text/javascript">' . $js . '</script>'; // phpcs:ignore WordPress.Security.EscapeOutput
 		}
 	}

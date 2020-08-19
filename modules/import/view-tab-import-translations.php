@@ -2,6 +2,7 @@
 /**
  * Displays the import translations form
  *
+ * @package Polylang-Pro
  * @since 2.7
  */
 
